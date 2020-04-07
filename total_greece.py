@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import datetime
 data = datetime.datetime.now()
 data1 = data.strftime("%d-%m-%Y %H:%M:%S")
@@ -11,20 +8,12 @@ import pandas as pd
 url = 'https://raw.githubusercontent.com/AlanTurist/Greece_covid19/master/total_greece.csv'
 df = pd.read_csv(url,index_col=0, sep=",")
 
-
-# In[ ]:
-
-
 reg1 = df.iloc[0]
 D1 = reg1['TOTAL_CASES']
 D2 = reg1['ACTIVE_CASES']
 D3 = reg1['RECOVERED']
 D4 = reg1['DEATHS']
 D5 = reg1['CRITICAL']
-
-
-# In[ ]:
-
 
 print('\t~ Ανάλυση δεδομένωνγια τον SARS-CoV2 στην Ελλάδα~')
 print('\n\t@Author: Γεώργιος Κολιού, georgios.koliou@gmail.com')
@@ -56,9 +45,4 @@ print("\n\t\t5.1 Σε κρίσιμη κατάσταση είναι το",'{0:.2f
 f = (100*D5)/247
 print("\n\t6. Είναι κατηλλημένο το",'{0:.2f}'.format(f),"% των ΜΕΘ")
 
-
-# In[ ]:
-
-
 input("\n\nΠατήστε enter για έξοδο από το πρόγραμμα..")
-
