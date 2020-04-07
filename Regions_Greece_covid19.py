@@ -5,10 +5,10 @@ import datetime
 data = datetime.datetime.now()
 data1 = data.strftime("%d-%m-%Y %H:%M:%S")
 import pandas as pd
-url = 'https://raw.githubusercontent.com/AlanTurist/Prefecture_Greece_covid19/master/prefecture_greece.csv'
+url = 'https://raw.githubusercontent.com/AlanTurist/Greece_covid19/master/region_greece.csv'
 df = pd.read_csv(url,index_col=0, sep=",")
 
-reg = str(input("Εισάγετε περιφέρεια: "))
+reg = str(input("\nΕισάγετε περιφέρεια: "))
 
 def regione(reg, x, y):
     reg1 = df.iloc[x]
@@ -72,12 +72,12 @@ elif reg == "ΑΓΝΩΣΤΗ ΤΟΠΟΘΕΣΙΑ":
     regione(reg,13,1)
     
 else:
-    print('Ο νομός δεν υπάρχει..')
+    print('Η περιφέρεια που εισάγατε δεν υπάρχει..')
 
 import os
 import sys
 
-restart = input("\nΘέλετε να ξαναδοκιμάσετε;: ")
+restart = input("\n\nΑν Θέλετε να ξαναδοκιμάσετε πατήστε το Ν")
 
 if restart == "Ν":
     os.execl(sys.executable, sys.executable, * sys.argv) 
