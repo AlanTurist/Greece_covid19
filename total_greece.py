@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 import datetime
 data = datetime.datetime.now()
 data1 = data.strftime("%d-%m-%Y %H:%M:%S")
@@ -11,20 +8,12 @@ import pandas as pd
 url = 'https://raw.githubusercontent.com/AlanTurist/Greece_covid19/master/total_greece.csv'
 df = pd.read_csv(url,index_col=0, sep=",")
 
-
-# In[ ]:
-
-
 reg1 = df.iloc[0]
 D1 = reg1['TOTAL_CASES']
 D2 = reg1['ACTIVE_CASES']
 D3 = reg1['RECOVERED']
 D4 = reg1['DEATHS']
 D5 = reg1['CRITICAL']
-
-
-# In[ ]:
-
 
 print('\t~ Ανάλυση δεδομένωνγια τον SARS-CoV2 στην Ελλάδα~')
 print('\n\t@Author: Γεώργιος Κολιού, georgios.koliou@gmail.com')
@@ -48,17 +37,12 @@ d = (100*D4)/D1
 print("\n\t4. Ο αριθμός θανάτων είναι:",D4)
 print("\n\t\t4.1 Η θνησιμότητα είναι στο",'{0:.2f}'.format(d),"% του συνόλου.")
 
-
 e = (100*D5)/D1
 print("\n\t5. Σε κρίσιμη κατάσταση είναι:",D5)
 print("\n\t\t5.1 Σε κρίσιμη κατάσταση είναι το",'{0:.2f}'.format(e),"% του συνόλου.")
       
 f = (100*D5)/247
 print("\n\t6. Είναι κατηλλημένο το",'{0:.2f}'.format(f),"% των ΜΕΘ")
-
-
-# In[ ]:
-
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -87,10 +71,6 @@ for i, p in enumerate(wedges):
 ax.set_title("ΕΛΛΑΔΑ")
 
 plt.show()
-
-
-# In[ ]:
-
 
 input("\n\nΠατήστε enter για έξοδο από το πρόγραμμα..")
 
