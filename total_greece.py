@@ -29,8 +29,8 @@ print("\n\t2. Τα ενεργά κρούσαματα είναι:",D2)
 b = (100*D2)/D1
 print('\n\t\t2.1. Τα ενεργά κρούσματα είναι το','{0:.2f}'.format(b),'% του συνόλου.')
 
-c = (100*D4)/D1
-print("\n\t3. Έχουν αναρρώσει:",D4)
+c = (100*D3)/D1
+print("\n\t3. Έχουν αναρρώσει:",D3)
 print("\n\t\t3.1. Έχει αναρρώσει το",'{0:.2f}'.format(c),"% του συνόλου.")
 
 d = (100*D4)/D1
@@ -44,29 +44,30 @@ print("\n\t\t5.1 Σε κρίσιμη κατάσταση είναι το",'{0:.2f
 f = (100*D5)/247
 print("\n\t6. Είναι κατηλλημένο το",'{0:.2f}'.format(f),"% των ΜΕΘ")
 
-diag = str(input("Θέλετε να εμφαιστεί το διάγραμμα;\n\nΠατήστε 'Y' για ΝΑΙ και 'N' για ΟΧΙ: "))
+import numpy as np
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(figsize=(24, 12), subplot_kw=dict(aspect="equal"))
 
-if diag == "Y":
-    import numpy as np
-    import matplotlib.pyplot as plt
-    fig, ax = plt.subplots(figsize=(30, 15), subplot_kw=dict(aspect="equal"))
-    recipe = ['ΕΝΕΡΓΟΙ', 'ΙΑΝΣΗ', 'ΘΑΝΑΤΟΙ', 'ΚΡΙΣΙΜΑ']
-    data = [b, c, d, e]
-    wedges, texts = ax.pie(data, wedgeprops=dict(width=0.5), startangle=-40)
-    bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
-    kw = dict(arrowprops=dict(arrowstyle="-"),
+recipe = ["ΕΝΕΡΓΟΙ", "ΙΑΝΣΗ", "ΘΑΝΑΤΟΙ", "ΚΡΙΣΙΜΑ"]
+
+data = [b, c, d, e]
+
+wedges, texts = ax.pie(data, wedgeprops=dict(width=0.5), startangle=-40)
+
+bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+kw = dict(arrowprops=dict(arrowstyle="-"),
           bbox=bbox_props, zorder=0, va="center")
-          
-          for i, p in enumerate(wedges):
-              ang = (p.theta2 - p.theta1)/2. + p.theta1
-              y = np.sin(np.deg2rad(ang))
-              x = np.cos(np.deg2rad(ang))
-              horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
-              connectionstyle = "angle,angleA=0,angleB={}".format(ang)
-              kw["arrowprops"].update({"connectionstyle": connectionstyle})
-              ax.annotate(recipe[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
-              horizontalalignment=horizontalalignment, **kw)
-              ax.set_title("ΕΛΛΑΔΑ")
-              plt.show()
-else:
-    input("\n\nΠατήστε enter για έξοδο από το πρόγραμμα..")
+
+for i, p in enumerate(wedges):
+    ang = (p.theta2 - p.theta1)/2. + p.theta1
+    y = np.sin(np.deg2rad(ang))
+    x = np.cos(np.deg2rad(ang))
+    horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
+    connectionstyle = "angle,angleA=0,angleB={}".format(ang)
+    kw["arrowprops"].update({"connectionstyle": connectionstyle})
+    ax.annotate(recipe[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+                horizontalalignment=horizontalalignment, **kw)
+
+ax.set_title("SARS-CoV2 ΕΛΛΑΔΑ")
+
+plt.show()
