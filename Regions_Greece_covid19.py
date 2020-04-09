@@ -77,7 +77,7 @@ else:
 import os
 import sys
 
-restart = input("\n\nΑν Θέλετε να ξαναδοκιμάσετε πατήστε το Ν")
+restart = input("\n\nΑν Θέλετε να ξαναδοκιμάσετε πατήστε το 'Ν' και enter: ")
 
 if restart == "Ν":
     os.execl(sys.executable, sys.executable, * sys.argv) 
