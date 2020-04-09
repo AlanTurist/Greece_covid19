@@ -48,7 +48,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots(figsize=(24, 12), subplot_kw=dict(aspect="equal"))
 
-recipe = ["ΕΝΕΡΓΟΙ", "ΙΑΝΣΗ", "ΘΑΝΑΤΟΙ", "ΚΡΙΣΙΜΑ"]
+recipe = ["ΕΝΕΡΓΟΙ", "ΑΝΑΡΡΩΣΑΝ", "ΘΑΝΑΤΟΙ", "ΚΡΙΣΙΜΑ"]
 
 data = [b, c, d, e]
 
