@@ -15,7 +15,7 @@ D3 = reg1['RECOVERED']
 D4 = reg1['DEATHS']
 D5 = reg1['CRITICAL']
 
-print('\t~ Ανάλυση δεδομένωνγια τον SARS-CoV2 στην Ελλάδα~')
+print('\t~ Ανάλυση δεδομένων για το SARS-CoV2 στην Ελλάδα ~')
 print('\n\t@Author: Γεώργιος Κολιού, georgios.koliou@gmail.com')
 print('\n****************************************************************************************')
 print("\n\tΣήμερα έχουμε",data1)
@@ -42,7 +42,7 @@ print("\n\t5. Σε κρίσιμη κατάσταση είναι:",D5)
 print("\n\t\t5.1 Σε κρίσιμη κατάσταση είναι το",'{0:.2f}'.format(e),"% του συνόλου.")
       
 f = (100*D5)/247
-print("\n\t6. Είναι κατηλλημένο το",'{0:.2f}'.format(f),"% των ΜΕΘ")
+print("\n\t6. Είναι κατειλλημμένο το",'{0:.2f}'.format(f),"% των ΜΕΘ")
 
 import numpy as np
 import matplotlib.pyplot as plt
