@@ -72,7 +72,7 @@ elif reg == "ΑΓΝΩΣΤΗ ΤΟΠΟΘΕΣΙΑ":
     regione(reg,13,1)
 
 elif reg == "ΑΓΙΟ ΟΡΟΣ":
-    regione(reg,14,1811)
+    regione(reg,14,2416)
     
 else:
     print('Η περιφέρεια που εισάγατε δεν υπάρχει..')
