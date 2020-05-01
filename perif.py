@@ -12,7 +12,7 @@ def regione(reg, x, y):
     
     print('\n\t~ Ανάλυση δεδομένων του SARS-CoV2 - ',reg,'~')
     print('\n\t@Author: Γεώργιος Κολιού, georgios.koliou@gmail.com\n')
-    print('*'*110)
+    print("*"*50,reg,"*"*50)
     print("\n\n\tΣήμερα έχουμε",data1)
     print('\n')
     print("*"*50,reg,"*"*50)
