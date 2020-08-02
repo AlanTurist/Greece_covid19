@@ -9,7 +9,7 @@ df = pd.read_csv(url,index_col=0, sep=",")
 def regione(reg, x, y):
     reg1 = df.iloc[x]
     D1 = reg1['CASES']
-    
+        
     print('\n\t~ Ανάλυση δεδομένων του SARS-CoV2 - ',reg,'~')
     print('\n\t@Author: Γεώργιος Κολιού, georgios.koliou@gmail.com\n')
     print("*"*50,reg,"*"*50)
